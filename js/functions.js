@@ -4,6 +4,7 @@ var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 
 $(function () {
+	var audio = new Audio('song.mp3');
     // setup garden
 	$loveHeart = $("#loveHeart");
 	var offsetX = $loveHeart.width() / 2;
@@ -25,6 +26,10 @@ $(function () {
     setInterval(function () {
         garden.render();
     }, Garden.options.growSpeed);
+
+	$("body").one("click", function() {
+			audio.play();
+		});
 });
 
 $(window).resize(function() {
